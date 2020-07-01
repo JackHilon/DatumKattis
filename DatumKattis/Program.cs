@@ -90,7 +90,9 @@ namespace DatumKattis
                 {
                     res[k] = int.Parse(arr[k]);
                 }
-                if (DatumCondition(res) == false)
+                if (DatumFirstCondition(res) == false)
+                    throw new ArgumentException();
+                if (DatumSecondCondition(res) == false)
                     throw new ArgumentException();
             }
             catch (Exception ex)
@@ -100,7 +102,7 @@ namespace DatumKattis
             }
             return res;
         }
-        private static bool DatumCondition(int[] yourDatum)
+        private static bool DatumFirstCondition(int[] yourDatum)
         {
             int day = yourDatum[0];
             int month = yourDatum[1];
@@ -108,6 +110,25 @@ namespace DatumKattis
                 return false;
             else if (month <= 0 || month > 12)
                 return false;
+            else return true;
+        }
+        private static bool DatumSecondCondition(int[] yourDatum)
+        {
+            int day = yourDatum[0];
+            int month = yourDatum[1];
+
+            if (month ==2  && day > 28)
+                return false;
+            else if (month == 4 && day > 30)
+                return false;
+            else if (month == 6 && day > 30)
+                return false;
+            //.....................................
+            else if (month == 9 && day > 30)
+                return false;
+            else if (month == 11 && day > 30)
+                return false;
+
             else return true;
         }
     }
