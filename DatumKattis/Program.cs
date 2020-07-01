@@ -10,9 +10,6 @@ namespace DatumKattis
             // https://open.kattis.com/problems/datum 
             // return day name during year 2009 
             // ----------------------------------------------------
-            // | Kattis website tells me error: wrong answer!!!   |
-            // | ,but from the calendar, the program is right!!!  |
-            // ----------------------------------------------------
             
             var myDatum = EnterDatumLine();
 
@@ -35,7 +32,7 @@ namespace DatumKattis
                 case 5:
                     return "Monday";
                 case 6:
-                    return "Tuestday";
+                    return "Tuesday";
                 case 0:
                 default:
                     return "Wednesday";
